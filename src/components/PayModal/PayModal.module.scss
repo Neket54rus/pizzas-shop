@@ -1,0 +1,87 @@
+.PayModal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+
+  &.Active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &Content {
+    position: relative;
+    padding: 20px 60px;
+    border-radius: 12px;
+    background: white;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 450px) {
+      padding: 20px 30px;
+    }
+
+    &Close {
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 12px;
+    }
+
+    &Success {
+      &Image {
+        height: 100px;
+      }
+    }
+
+    &Name,
+    &Phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+
+      &Title {
+        color: #181818;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      &Input {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 10px 20px;
+      }
+    }
+
+    &Error {
+      color: red;
+      font-size: 14px;
+    }
+
+    &Button {
+      font-size: 16px;
+      font-weight: 600;
+
+      &:disabled {
+        cursor: not-allowed;
+        filter: grayscale(100%);
+      }
+    }
+  }
+}

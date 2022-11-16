@@ -1,0 +1,22 @@
+.ScrollTop {
+  cursor: pointer;
+  position: fixed;
+  bottom: 70px;
+  right: 40px;
+  background: #fe5f1e;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &.Visible {
+    opacity: 1;
+    pointer-events: all;
+}
+}

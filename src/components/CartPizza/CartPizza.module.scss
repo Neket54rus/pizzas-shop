@@ -1,0 +1,158 @@
+.cart {
+	&__item {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		border-top: 1px solid #f6f6f6;
+		padding-top: 30px;
+		margin-top: 30px;
+
+		&Img {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			margin-right: 15px;
+			width: 10%;
+
+			img {
+				width: 80px;
+				height: 80px;
+			}
+
+			@media (max-width: 855px) {
+				display: none;
+			}
+		}
+
+		&Info {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			width: 40%;
+
+			h3 {
+				font-weight: bold;
+				font-size: 22px;
+				line-height: 27px;
+				letter-spacing: 0.01em;
+			}
+
+			p {
+				font-size: 18px;
+				color: #8d8d8d;
+			}
+		}
+
+		&Count {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			width: 13%;
+
+			@media (max-width: 550px) {
+				display: none;
+			}
+
+			&Minus {
+				&:disabled {
+					cursor: not-allowed;
+					filter: grayscale(100%);
+				}
+
+				svg {
+					path {
+						&:first-of-type {
+							display: none;
+						}
+					}
+				}
+			}
+
+			b {
+				font-size: 22px;
+			}
+		}
+
+		&Price {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			width: 33%;
+
+			b {
+				font-weight: bold;
+				font-size: 22px;
+				letter-spacing: 0.01em;
+			}
+		}
+
+		&Remove {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: end;
+			-ms-flex-pack: end;
+			justify-content: flex-end;
+			width: 4%;
+
+			.button {
+				border-color: #ddd;
+
+				svg {
+					width: 11.5px;
+					height: 11.5px;
+					position: relative;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+
+					path {
+						fill: #d0d0d0;
+					}
+				}
+
+				&:hover {
+					border-color: #2a2a2a;
+					background-color: #2a2a2a;
+				}
+
+				&:active {
+					border-color: #2a2a2a;
+					background-color: #2a2a2a;
+				}
+			}
+		}
+	}
+}
+
+.pizzaBlock {
+	&__image {
+		width: 260px;
+	}
+}
