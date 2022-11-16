@@ -1,5 +1,7 @@
 # Ссылка на сайт:
 
+https://pizzas-shop-nu.vercel.app/pizzas
+
 # О проекте:
 
 Онлайн магазин пицц.
