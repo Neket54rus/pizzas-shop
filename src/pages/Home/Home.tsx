@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { useAppSelector } from '../../hooks'
 
-import { Categories, SortPopup, PizzasBlock } from '../../components'
+import { Categories, PizzasBlock, SortPopup } from '../../components'
 
 export const Home: FC = () => {
 	const pizzas = useAppSelector((state) => state.pizzas.pizzas)
@@ -17,11 +17,11 @@ export const Home: FC = () => {
 
 	const sortedPizzas = [...filteredPizzas].sort((firstPizza, secondPizza) => {
 		if (activeSort === 1) {
-			return secondPizza.price - firstPizza.price
+			return firstPizza.price - secondPizza.price
 		}
 
 		if (activeSort === 2) {
-			return firstPizza.title.localeCompare(secondPizza.title)
+			return secondPizza.price - firstPizza.price
 		}
 
 		return secondPizza.rating - firstPizza.rating

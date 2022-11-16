@@ -1,14 +1,13 @@
 import { FC, useState } from 'react'
 
-import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { useAppSelector } from '../../hooks/useAppSelector'
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import { setActiveSort } from '../../redux/reducers'
 
-import ArroIcon from '../../assets/img/ArrowIcon'
+import ArrowIcon from '../../assets/img/ArrowIcon'
 import styles from './SortPopup.module.scss'
 
 export const SortPopup: FC = () => {
-	const sorts = ['популярности', 'цене', 'алфавиту']
+	const sorts = ['Сначала популярные', 'Сначала недорогие', 'Сначала дорогие']
 
 	const dispatch = useAppDispatch()
 
@@ -41,8 +40,8 @@ export const SortPopup: FC = () => {
 	return (
 		<div className={styles.sort}>
 			<div onClick={handlerLabel} className={styles.sort__label}>
-				<ArroIcon visible={isVisible} />
-				<b>Сортировка по:</b>
+				<ArrowIcon visible={isVisible} />
+				<b>Сортировка:</b>
 				<span>{sorts[activeSort]}</span>
 			</div>
 			{isVisible ? (
