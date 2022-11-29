@@ -49,7 +49,7 @@ export const CartPizza: FC<CartPizzaProps> = ({ pizza }) => {
 				<button
 					onClick={handlerMinusCount}
 					className={`button button--outline button--circle ${styles.cart__itemCountMinus}`}
-               disabled={count <= 1}
+					disabled={count <= 1}
 				>
 					<MinusBtn />
 				</button>

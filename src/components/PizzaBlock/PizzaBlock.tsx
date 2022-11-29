@@ -5,7 +5,7 @@ import { addPizza, plusCount, plusFullPrice } from '../../redux/reducers'
 
 import { useAppDispatch } from '../../hooks'
 
-import type { ICartPizza,IPizza } from '../../models'
+import type { ICartPizza, IPizza } from '../../models'
 
 import PlusIcon from '../../assets/img/PlusIcon'
 import styles from './PizzaBlock.module.scss'
@@ -31,6 +31,8 @@ export const PizzasBlock: FC<IPizza> = ({
 			}, 0),
 	)
 
+	console.log(count)
+
 	const handlerTypeItem = (type: number) => () => setActiveType(type)
 
 	const handlerSizeItem = (size: number) => () => {
@@ -47,11 +49,11 @@ export const PizzasBlock: FC<IPizza> = ({
 	}
 
 	const handlerAddButton = () => {
-		setCount((count: number) => count + 1)
+		setCount((count: number = 0) => count + 1)
 		dispatch(plusFullPrice(price))
 		dispatch(plusCount(1))
 		dispatch(
-			addPizza( {
+			addPizza({
 				id,
 				count: 1,
 				title,
