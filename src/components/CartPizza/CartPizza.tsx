@@ -21,11 +21,11 @@ export const CartPizza: FC<CartPizzaProps> = ({ pizza }) => {
 	const dispatch = useAppDispatch()
 
 	const handlerPlusCount = () => {
-		dispatch(plusPizza({ id, price: defaultPrice }))
+		dispatch(plusPizza({ id, price: defaultPrice, type, size, title }))
 	}
 
 	const handlerMinusCount = () => {
-		dispatch(minusPizza({ id, price: defaultPrice }))
+		dispatch(minusPizza({ id, price: defaultPrice, type, size, title }))
 	}
 
 	const handlerDeleteButton = () => {

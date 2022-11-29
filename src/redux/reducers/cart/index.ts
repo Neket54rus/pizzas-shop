@@ -41,10 +41,13 @@ export const cartSlice = createSlice({
 		},
 		plusPizza: (
 			state,
-			action: PayloadAction<{ id: number; price: number }>,
+			action: PayloadAction<{ id: number; price: number; title: string; type: number; size: number }>,
 		) => {
 			state.pizzas = state.pizzas.map((pizza) =>
-				pizza.id === action.payload.id
+				pizza.id === action.payload.id &&
+					pizza.type === action.payload.type &&
+					pizza.size === action.payload.size &&
+					pizza.title === action.payload.title
 					? {
 							...pizza,
 							count: pizza.count + 1,
@@ -56,13 +59,17 @@ export const cartSlice = createSlice({
 			state.count = state.count + 1
 			localStorage.setItem('price', JSON.stringify(state.fullPrice))
 			localStorage.setItem('count', JSON.stringify(state.count))
+			localStorage.setItem('cart', JSON.stringify(state.pizzas))
 		},
 		minusPizza: (
 			state,
-			action: PayloadAction<{ id: number; price: number }>,
+			action: PayloadAction<{ id: number; price: number; title: string; type: number; size: number }>,
 		) => {
 			state.pizzas = state.pizzas.map((pizza) =>
-				pizza.id === action.payload.id
+				pizza.id === action.payload.id &&
+				pizza.type === action.payload.type &&
+				pizza.size === action.payload.size &&
+				pizza.title === action.payload.title
 					? {
 							...pizza,
 							count: pizza.count - 1,
@@ -74,6 +81,7 @@ export const cartSlice = createSlice({
 			state.count = state.count - 1
 			localStorage.setItem('price', JSON.stringify(state.fullPrice))
 			localStorage.setItem('count', JSON.stringify(state.count))
+			localStorage.setItem('cart', JSON.stringify(state.pizzas))
 		},
 		deletePizza: (
 			state,

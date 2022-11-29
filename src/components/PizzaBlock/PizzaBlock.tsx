@@ -31,8 +31,6 @@ export const PizzasBlock: FC<IPizza> = ({
 			}, 0),
 	)
 
-	console.log(count)
-
 	const handlerTypeItem = (type: number) => () => setActiveType(type)
 
 	const handlerSizeItem = (size: number) => () => {
